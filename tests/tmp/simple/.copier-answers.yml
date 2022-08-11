@@ -1,0 +1,11 @@
+# Changes here will be overwritten by Copier
+_commit: e8deb05
+_src_path: .
+author_email: doe@gmail.com
+author_fullname: John Doe
+author_username: doe
+copyright_date: '2022'
+project_description: Simple project description
+project_name: Simple
+python_package_import_name: simple
+

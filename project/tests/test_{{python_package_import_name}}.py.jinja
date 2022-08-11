@@ -1,0 +1,7 @@
+import pytest
+
+from {{ python_package_import_name }} import get_numbers_sum
+
+
+def test_get_numbers_sum():
+    assert get_numbers_sum(1, 2) == 3
