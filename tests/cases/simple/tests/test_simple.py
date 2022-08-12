@@ -1,5 +1,3 @@
-import pytest
-
 from simple import get_numbers_sum
 
 

@@ -2,17 +2,30 @@ clean:
 	@rm -rf ./tests/tmp
 
 test: clean
-	@copier . ./tests/tmp/simple --defaults\
+	@echo "----- Simple testcase -----"
+
+	@copier --defaults \
+		--vcs-ref=HEAD \
 		-d project_name="Simple" \
 		-d project_description='Simple project description' \
 		-d author_fullname="John Doe" \
 		-d author_username="doe" \
-		-d author_email="doe@gmail.com"
+		-d author_email="doe@gmail.com" \
+		copy . ./tests/tmp/simple
 
-	@diff --side-by-side \
-		--suppress-common-lines \
-		--recursive \
-		./tests/simple ./tests/tmp/simple
+	@diff --recursive \
+		--exclude=.copier-answers.yml \
+		./tests/cases/simple ./tests/tmp/simple
+
+generate_cases:
+	@copier --defaults \
+		--vcs-ref=HEAD \
+		-d project_name="Simple" \
+		-d project_description='Simple project description' \
+		-d author_fullname="John Doe" \
+		-d author_username="doe" \
+		-d author_email="doe@gmail.com" \
+		copy . ./tests/cases/simple
 
 release:
 	@git tag $(version)

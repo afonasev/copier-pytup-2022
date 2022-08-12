@@ -1,3 +1,6 @@
+# https://copier.readthedocs.io/en/stable/configuring/
+
+# Answers
 project_name:
   type: str
   help: Your project name
@@ -5,56 +8,33 @@ project_name:
 project_description:
   type: str
   help: Your project description
+  multiline: true
 
 author_fullname:
   type: str
   help: Your full name
 
-author_email:
-  type: str
-  help: Your email
-
-author_username:
-  type: str
-  help: Your username (e.g. on GitHub)
-
 copyright_date:
-  type: str
+  type: int
   help: The copyright date
-  default: "2022"
+  default: 2022
 
-python_package_import_name:
+python_package_name:
   type: str
-  help: Your Python package import name (for `import NAME` in Python code)
+  help: Your Python package name (for `import NAME` in Python code)
   default: "{{ project_name|lower|replace('-', '_')|replace(' ', '_') }}"
 
-# CONFIGURATION -------------------------
+# Settings
 _min_copier_version: "6.1.0"
-_envops:
-  autoescape: false
-  block_end_string: "%}"
-  block_start_string: "{%"
-  comment_end_string: "#}"
-  comment_start_string: "{#"
-  keep_trailing_newline: true
-  variable_end_string: "}}"
-  variable_start_string: "{{"
 _subdirectory: project
 _templates_suffix: .jinja
 _skip_if_exists:
-- CHANGELOG.md
-# _tasks:
-# - python scripts/post_generation.py
-# _migrations:
-#   - version: 0.1.0
-#     before:
-#     - rm docs/changelog.md
-#     - rm docs/index.md
-#     - rm docs/contributing.md
-#     - rm docs/code_of_conduct.md
-#     - rm docs/credits.md
-#   - version: 0.2.0
-#     after:
-#     - rm -f docs/macros.py
-#     - rm -f docs/credits.md
-#     - rm -rf docs/reference
+  - CHANGELOG.md
+_tasks:
+  - python3 scripts/post_generation.py
+_migrations:
+  - version: 0.1.0
+    before:
+    - rm requirements.txt
+    after:
+    - rm requirements.dev.txt
