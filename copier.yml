@@ -1,6 +1,6 @@
 # https://copier.readthedocs.io/en/stable/configuring/
 
-# Answers
+# Questions
 project_name:
   type: str
   help: Your project name

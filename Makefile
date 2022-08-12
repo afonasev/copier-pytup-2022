@@ -17,6 +17,8 @@ test: clean
 		--exclude=.copier-answers.yml \
 		./tests/cases/simple ./tests/tmp/simple
 
+	@echo "----- Tests passed! -----"
+
 generate_cases:
 	@copier --defaults \
 		--vcs-ref=HEAD \
