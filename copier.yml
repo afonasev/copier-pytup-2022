@@ -8,7 +8,6 @@ project_name:
 project_description:
   type: str
   help: Your project description
-  multiline: true
 
 author_fullname:
   type: str
@@ -31,10 +30,6 @@ _templates_suffix: .jinja
 _skip_if_exists:
   - CHANGELOG.md
 _tasks:
-  - python3 scripts/post_generation.py
-_migrations:
-  - version: 0.1.0
-    before:
-    - rm requirements.txt
-    after:
-    - rm requirements.dev.txt
+  - python3 ./hooks/post_generation.py
+  - rm -rf ./hooks
+
