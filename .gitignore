@@ -130,3 +130,6 @@ dmypy.json
 
 # Copier tests
 tests/tmp/*
+
+# ide
+.vscode/*
