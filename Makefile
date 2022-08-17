@@ -37,7 +37,7 @@ test:  ## Test template with test cases
 		./tests/cases/simple ./tests/tmp/simple
 
 .PHONY: create_test_case
-create_test_case:  ## Create test case projects
+create_test_case:  ## Create test cases projects
 	@copier --defaults \
 		--vcs-ref=HEAD \
 		-d project_name="Simple" \

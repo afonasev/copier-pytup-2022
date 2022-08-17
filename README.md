@@ -7,8 +7,8 @@ Minimal [Copier] template for Pytup 2022.
 Install [Copier] and generate a new project:
 
 ```bash
-pipx install copier
-copier gh:afonasev/copier-pytup-2022 project
+>>> pipx install copier
+>>> copier gh:afonasev/copier-pytup-2022 project
 ```
 
 Copier prompts you for information about new project.
@@ -31,6 +31,39 @@ project/
 ## Features
 
 - Just very simple example of [Copier] template
+
+## Actions
+
+### Show help
+
+```bash
+>>> make help
+Usage: make <target>
+
+Targets:
+clean            Remove temporary test files
+create_test_case Create test cases projects
+release          Release new template version (version argument is needed)
+test             Test template with test cases
+```
+
+### Create test cases projects
+
+```bash
+>>> make create_test_case
+```
+
+### Run tests
+
+```bash
+>>> make test
+```
+
+### Release new template version (version argument is needed)
+
+```bash
+>>> make release version="1.1"
+```
 
 ## Resources
 

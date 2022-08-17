@@ -17,7 +17,7 @@ pip install simple
 Showcase how your project can be used:
 
 ```python
-from  import get_numbers_sum
+from simple import get_numbers_sum
 
 get_numbers_sum(1, 2)
 # => 3
