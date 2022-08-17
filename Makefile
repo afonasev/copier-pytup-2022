@@ -20,7 +20,7 @@ clean:  ## Remove temporary test files
 	@rm -rf ./tests/tmp
 
 .PHONY: test
-test:  ## Test template with test cases
+test: clean ## Test template with test cases
 	@echo "----- Simple testcase -----"
 
 	@copier --defaults \
