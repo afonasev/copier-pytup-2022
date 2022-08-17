@@ -1,4 +1,4 @@
-from simple import get_numbers_sum
+from  import get_numbers_sum
 
 
 def test_get_numbers_sum():
