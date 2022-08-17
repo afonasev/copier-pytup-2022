@@ -80,4 +80,4 @@ Distributed under the terms of the [MIT license], copier-pytup-2022 is free and 
 
   [Copier]: https://copier.readthedocs.io/en/stable/
   [MIT license]: http://opensource.org/licenses/MIT
-  [file an issue]: https://github.com/pytest-dev/cookiecutter-pytest-plugin/issues
+  [file an issue]: https://github.com/afonasev/copier-pytup-2022/issues
